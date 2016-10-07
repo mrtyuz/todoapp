@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <link href="../static/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body>
+
+
+<div class="row">
+    <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" th:href="@{/home}">MY TODO</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#" th:href="@{/}">Home</a></li>
+                    <li><a href="#" th:href="@{/todo-list}">Todo List</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--  <li th:if="${#authorization.expression('!isAuthenticated()')}">
+                          <a href="/signin" th:href="@{/signin}">Sign in</a>
+                      </li>
+                      <li th:if="${#authorization.expression('isAuthenticated()')}">
+                          <a href="/logout" th:href="@{/logout}">Logout</a>
+                      </li> -->
+                    <li>
+                        <a th:href="@{/register}">Register</a>
+                    </li>
+                    <li>
+                        <a  th:href="@{/login}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="height: 100px;"></div>
+    <div class="row">
+
+    <div class="container">
+        <h1>Welcome!</h1>
+        <h2>If you have registered please login!</h2>
+        <p><a th:href="@{/register}">Register</a> or <a th:href="@{/login}">Login</a></p>
+
+    </div>
+    </div>
+
+</body>
+</html>
+

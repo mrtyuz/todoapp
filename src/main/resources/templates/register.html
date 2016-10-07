@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <link href="../static/css/bootstrap.min.css"
+          th:href="@{css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+
+</head>
+<body>
+
+<div class="row">
+    <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" th:href="@{/home}">MY TODO</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#" th:href="@{/}">Home</a></li>
+                    <li><a href="#" th:href="@{/todo-list}">Todo List</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <!--  <li th:if="${#authorization.expression('!isAuthenticated()')}">
+                          <a href="/signin" th:href="@{/signin}">Sign in</a>
+                      </li>
+                      <li th:if="${#authorization.expression('isAuthenticated()')}">
+                          <a href="/logout" th:href="@{/logout}">Logout</a>
+                      </li> -->
+                    <li>
+                        <a th:href="@{/register}">Register</a>
+                    </li>
+                    <li>
+                        <a  th:href="@{/login}">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" style="height: 100px;"></div>
+
+    <div class="container">
+        <form action="#" th:action="@{/member}" th:object="${memberDTO}" method="post" class="form-group">
+            <div class="row"><h2 class="form-signin-heading">Please Register</h2></div>
+
+            <div class="row"><p>Username : <input type="text" th:field="*{username}" class="input-block-level"/></p></div>
+            <div class="row"><p>Password : <input type="password" th:field="*{password}" class="input-block-level"/></p></div>
+
+            <div class="row"><input type="submit" value="Submit" class="btn btn-large btn-primary"/></div>
+        </form>
+    </div>
+
+
+
+</body>
+</html>
